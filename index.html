@@ -75,6 +75,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-利用imagej实现小鼠脑图像配准" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/08/01/%E5%88%A9%E7%94%A8imagej%E5%AE%9E%E7%8E%B0%E5%B0%8F%E9%BC%A0%E8%84%91%E5%9B%BE%E5%83%8F%E9%85%8D%E5%87%86/" class="article-date">
+  <time class="dt-published" datetime="2024-08-01T07:58:06.000Z" itemprop="datePublished">2024-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/08/01/%E5%88%A9%E7%94%A8imagej%E5%AE%9E%E7%8E%B0%E5%B0%8F%E9%BC%A0%E8%84%91%E5%9B%BE%E5%83%8F%E9%85%8D%E5%87%86/">利用imagej实现小鼠脑图像配准</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>  需求：</p>
+<p>神经科学研究中，需要对小鼠脑片和标准图谱进行配准。由于制样过程中的种种问题，使得实际样品与标准图谱形状有所差异，无法直接用来对比配准。这时可以通过imagej对脑片和脑图谱进行配准。</p>
+<p>步骤一：</p>
+<p>利用ps等图片编辑软件将标准脑图谱处理得到以下图片</p>
+<p><img src="https://s2.loli.net/2024/08/01/4LwDafEopdCeu6q.jpg" alt="0-1.jpg"></p>
+<p>步骤二：</p>
+<p>在imagej中打开脑片(target image)和脑图谱(moving image)，调出plugins—-&gt;BigdataViewer—&gt;Big warp插件，进入校准工作界面。</p>
+<p><img src="https://s2.loli.net/2024/08/01/CrJpWe7BiumAOEY.jpg" alt="0.jpg"></p>
+<p>在英文输入模式下，长按 <strong>Space空格键</strong> 进入 <strong>landmark模式</strong> ，同时点击鼠标左键进行mark。分别在左右两个图相应的位置进行一一点击加点，所有的点的信息都会记录在landmarks表格中，有需要删除的点可以在表格中进行操作。</p>
+<p><img src="https://s2.loli.net/2024/08/01/h5UkqXb2WlIB8dJ.jpg" alt="1.jpg"></p>
+<p>标记完成后，在英文输入模式下，按Space空格键推出landmark模式，再按T确认变形。</p>
+<p>在moving image的窗口点击File—&gt;Export as ImagePlus，生成变形匹配后的脑图谱图片。</p>
+<p>最后利用merge功能将脑图谱和脑片叠加到一块。</p>
+<p><img src="https://s2.loli.net/2024/08/01/AesdQSRna2zOYM9.jpg" alt="00801_00850_CH1.jpg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/08/01/%E5%88%A9%E7%94%A8imagej%E5%AE%9E%E7%8E%B0%E5%B0%8F%E9%BC%A0%E8%84%91%E5%9B%BE%E5%83%8F%E9%85%8D%E5%87%86/" data-id="clzb1nt940004egtgdh5r23sg" data-title="利用imagej实现小鼠脑图像配准" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/imagej/" rel="tag">imagej</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-利用宏实现imagej的merge自动化操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/07/31/%E5%88%A9%E7%94%A8%E5%AE%8F%E5%AE%9E%E7%8E%B0imagej%E7%9A%84merge%E8%87%AA%E5%8A%A8%E5%8C%96%E6%93%8D%E4%BD%9C/" class="article-date">
@@ -114,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/31/%E5%88%A9%E7%94%A8%E5%AE%8F%E5%AE%9E%E7%8E%B0imagej%E7%9A%84merge%E8%87%AA%E5%8A%A8%E5%8C%96%E6%93%8D%E4%BD%9C/" data-id="clz966as6000doctgbo7dbxb9" data-title="利用宏实现imagej的merge自动化操作" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/07/31/%E5%88%A9%E7%94%A8%E5%AE%8F%E5%AE%9E%E7%8E%B0imagej%E7%9A%84merge%E8%87%AA%E5%8A%A8%E5%8C%96%E6%93%8D%E4%BD%9C/" data-id="clzb1nt980008egtg75rv1mpa" data-title="利用宏实现imagej的merge自动化操作" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -181,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/29/hexo%E6%90%AD%E5%BB%BA%E9%83%A8%E7%BD%B2/" data-id="clz966arx0003octg5zpcdfy7" data-title="hexo搭建部署" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/07/29/hexo%E6%90%AD%E5%BB%BA%E9%83%A8%E7%BD%B2/" data-id="clzb1nt960007egtg267kdvm5" data-title="hexo搭建部署" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -234,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/26/imagej%E5%AE%8F%E6%93%8D%E4%BD%9C/" data-id="clz966arz0004octgbuatbd4k" data-title="imagej批量处理图像" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/07/26/imagej%E5%AE%8F%E6%93%8D%E4%BD%9C/" data-id="clzb1nt920003egtgaic651qf" data-title="imagej批量处理图像" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -287,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/25/hello-world/" data-id="clz966art0001octg9gf973jm" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/07/25/hello-world/" data-id="clzb1nt8y0001egtg8owv9jdq" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -338,7 +392,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li></ul>
     </div>
   </div>
 
@@ -349,6 +403,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/08/01/%E5%88%A9%E7%94%A8imagej%E5%AE%9E%E7%8E%B0%E5%B0%8F%E9%BC%A0%E8%84%91%E5%9B%BE%E5%83%8F%E9%85%8D%E5%87%86/">利用imagej实现小鼠脑图像配准</a>
+          </li>
         
           <li>
             <a href="/2024/07/31/%E5%88%A9%E7%94%A8%E5%AE%8F%E5%AE%9E%E7%8E%B0imagej%E7%9A%84merge%E8%87%AA%E5%8A%A8%E5%8C%96%E6%93%8D%E4%BD%9C/">利用宏实现imagej的merge自动化操作</a>

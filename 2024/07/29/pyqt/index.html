@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1.创建一个最简单的QT应用实例需要的元素12345678910111213141516171819202122import sysfrom PyQt5.QtWidgets import QApplication,QWidgetif __name__&#x3D;&#x3D;&#x27;__main__&#x27;:    #创建QApplication类的实例    # app &#x3D; QApplication(sys.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pyqt">
+<meta property="og:url" content="http://example.com/2024/07/29/pyqt/index.html">
+<meta property="og:site_name" content="zw python">
+<meta property="og:description" content="1.创建一个最简单的QT应用实例需要的元素12345678910111213141516171819202122import sysfrom PyQt5.QtWidgets import QApplication,QWidgetif __name__&#x3D;&#x3D;&#x27;__main__&#x27;:    #创建QApplication类的实例    # app &#x3D; QApplication(sys.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-07-29T03:28:02.000Z">
+<meta property="article:modified_time" content="2024-11-08T02:32:04.154Z">
+<meta property="article:author" content="zw">
+<meta property="article:tag" content="pyqt">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2024/07/29/pyqt/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>pyqt | zw python</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">zw python</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">zw</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section">Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section">Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section">Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/29/pyqt/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zw">
+      <meta itemprop="description" content="zw的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zw python">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          pyqt
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-07-29 11:28:02" itemprop="dateCreated datePublished" datetime="2024-07-29T11:28:02+08:00">2024-07-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-11-08 10:32:04" itemprop="dateModified" datetime="2024-11-08T10:32:04+08:00">2024-11-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="1-创建一个最简单的QT应用实例需要的元素"><a href="#1-创建一个最简单的QT应用实例需要的元素" class="headerlink" title="1.创建一个最简单的QT应用实例需要的元素"></a>1.创建一个最简单的QT应用实例需要的元素</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QApplication,QWidget</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment">#创建QApplication类的实例</span></span><br><span class="line">    <span class="comment"># app = QApplication(sys.argv)</span></span><br><span class="line">    app = QApplication([])</span><br><span class="line">    <span class="comment">#创建一个窗口</span></span><br><span class="line">    w = QWidget()</span><br><span class="line">    <span class="comment">#设置窗口的尺寸</span></span><br><span class="line">    w.resize(<span class="number">300</span>,<span class="number">300</span>)</span><br><span class="line">    <span class="comment">#移动窗口</span></span><br><span class="line">    w.move(<span class="number">0</span>,<span class="number">300</span>)</span><br><span class="line">    <span class="comment">#设置窗口的标题</span></span><br><span class="line">    w.setWindowTitle(<span class="string">&#x27;第一个小程序&#x27;</span>)</span><br><span class="line">    <span class="comment">#显示窗口</span></span><br><span class="line">    w.show()</span><br><span class="line">    <span class="comment">#进入程序的主循环,并通过exit函数确保主循环安全结束</span></span><br><span class="line">    sys.exit(app.exec_())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#sys.argv是获取使用命令行运行python文件时的命令行参数</span></span><br><span class="line"><span class="comment">#sys.exit()通过捕获异常来结束程序的运行</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-使用designer-exe进行UI布局，如何将ui文件转化为py文件"><a href="#2-使用designer-exe进行UI布局，如何将ui文件转化为py文件" class="headerlink" title="2.使用designer.exe进行UI布局，如何将ui文件转化为py文件"></a>2.使用designer.exe进行UI布局，如何将ui文件转化为py文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将.ui文件转换为.py文件</span></span><br><span class="line"><span class="comment">#方法一   python -m PyQt5.uic.pyuic demo.ui demo.py</span></span><br><span class="line"><span class="comment">#方法二 pyuic5 demo.ui -o demo.py</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Ui_Dialog</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">setupUi</span>(<span class="params">self,MainWindow</span>):</span><br><span class="line">        MainWindow.setObjectName(<span class="string">&quot;Dialog&quot;</span>)</span><br><span class="line">        MainWindow.resize(<span class="number">400</span>, <span class="number">300</span>)</span><br><span class="line">        <span class="variable language_">self</span>.buttonBox = QtWidgets.QDialogButtonBox(MainWindow)</span><br><span class="line">        <span class="variable language_">self</span>.buttonBox.setGeometry(QtCore.QRect(<span class="number">30</span>, <span class="number">240</span>, <span class="number">341</span>, <span class="number">32</span>))</span><br><span class="line">        <span class="variable language_">self</span>.buttonBox.setOrientation(QtCore.Qt.Horizontal)</span><br><span class="line">        <span class="variable language_">self</span>.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)</span><br><span class="line">        <span class="variable language_">self</span>.buttonBox.setObjectName(<span class="string">&quot;buttonBox&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.retranslateUi(MainWindow)</span><br><span class="line">        <span class="variable language_">self</span>.buttonBox.accepted.connect(MainWindow.accept)</span><br><span class="line">        <span class="variable language_">self</span>.buttonBox.rejected.connect(MainWindow.reject)</span><br><span class="line">        QtCore.QMetaObject.connectSlotsByName(MainWindow)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">retranslateUi</span>(<span class="params">self, MainWindow</span>):</span><br><span class="line">        _translate = QtCore.QCoreApplication.translate</span><br><span class="line">        MainWindow.setWindowTitle(_translate(<span class="string">&quot;Dialog&quot;</span>, <span class="string">&quot;Dialog&quot;</span>))</span><br><span class="line">        </span><br><span class="line">  <span class="comment">#转化之后是一个基础类，想要运行需要继承QT类</span></span><br><span class="line">w = QWidget()</span><br><span class="line">ui = Ui_Dialog()</span><br><span class="line">ui.setupUi(w)</span><br><span class="line">w.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-主窗口的类型"><a href="#3-主窗口的类型" class="headerlink" title="3.主窗口的类型"></a>3.主窗口的类型</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">有3种窗口</span><br><span class="line">QMainWindow</span><br><span class="line">QWidget</span><br><span class="line">QDialog</span><br><span class="line">QMainWindow:可以包含菜单栏、工具栏、状态栏和标题栏，是最常见的窗口形式</span><br><span class="line">QDialog:是对话窗口的基类。没有</span><br><span class="line">QWidget:不确定窗口的用途时使用。</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-获取屏幕尺寸的API—-QDesktopWidget"><a href="#4-获取屏幕尺寸的API—-QDesktopWidget" class="headerlink" title="4.获取屏幕尺寸的API—-QDesktopWidget"></a>4.获取屏幕尺寸的API—-QDesktopWidget</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMainWindow,QApplication,QDesktopWidget</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FirstMainWin</span>(<span class="title class_ inherited__">QMainWindow</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,parent=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="built_in">super</span>(FirstMainWin,<span class="variable language_">self</span>).__init__(parent)</span><br><span class="line">        <span class="comment"># 设置主窗口的尺寸</span></span><br><span class="line">        <span class="variable language_">self</span>.resize(<span class="number">400</span>,<span class="number">300</span>)</span><br><span class="line">        <span class="comment"># 设置主窗口的标题</span></span><br><span class="line">        <span class="variable language_">self</span>.setWindowTitle(<span class="string">&#x27;第一个主窗口应用&#x27;</span>)</span><br><span class="line">        <span class="comment"># self.status = self.statusBar()</span></span><br><span class="line">        <span class="comment"># self.status.showMessage(&#x27;只存在5秒的消息&#x27;,5000)</span></span><br><span class="line">        <span class="variable language_">self</span>.move(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="variable language_">self</span>.center()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">center</span>(<span class="params">self</span>):</span><br><span class="line">        screen = QDesktopWidget().screenGeometry()</span><br><span class="line">        <span class="comment"># self.geometry()获取窗口自身的尺寸大小</span></span><br><span class="line">        size = <span class="variable language_">self</span>.geometry()</span><br><span class="line">        newLeft = (screen.width() - size.width()) // <span class="number">2</span></span><br><span class="line">        newTop = (screen.height() - size.height()) // <span class="number">2</span></span><br><span class="line">        <span class="variable language_">self</span>.move(newLeft, newTop)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    <span class="comment"># app.setWindowIcon(QIcon(&#x27;./img.ico&#x27;))</span></span><br><span class="line">    firstWindow = FirstMainWin()</span><br><span class="line">    firstWindow.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-使用信号槽退出程序"><a href="#5-使用信号槽退出程序" class="headerlink" title="5.使用信号槽退出程序"></a>5.使用信号槽退出程序</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMainWindow,QApplication,QDesktopWidget,QPushButton,\</span><br><span class="line">    QHBoxLayout,QWidget</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FirstMainWin</span>(<span class="title class_ inherited__">QMainWindow</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,parent=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="built_in">super</span>(FirstMainWin,<span class="variable language_">self</span>).__init__(parent)</span><br><span class="line">        <span class="comment"># 设置主窗口的尺寸</span></span><br><span class="line">        <span class="variable language_">self</span>.resize(<span class="number">400</span>,<span class="number">300</span>)</span><br><span class="line">        <span class="comment"># 设置主窗口的标题</span></span><br><span class="line">        <span class="variable language_">self</span>.setWindowTitle(<span class="string">&#x27;第一个主窗口应用&#x27;</span>)</span><br><span class="line">        <span class="variable language_">self</span>.center()</span><br><span class="line">        <span class="variable language_">self</span>.btn1 = QPushButton(<span class="string">&#x27;退出应用程序&#x27;</span>)</span><br><span class="line">        <span class="variable language_">self</span>.btn1.clicked.connect(<span class="variable language_">self</span>.onClick_Button)</span><br><span class="line">        layout = QHBoxLayout()</span><br><span class="line">        layout.addWidget(<span class="variable language_">self</span>.btn1)</span><br><span class="line">        mainFrame = QWidget()</span><br><span class="line">        mainFrame.setLayout(layout)</span><br><span class="line">        <span class="variable language_">self</span>.setCentralWidget(mainFrame)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">center</span>(<span class="params">self</span>):</span><br><span class="line">        screen = QDesktopWidget().screenGeometry()</span><br><span class="line">        size = <span class="variable language_">self</span>.geometry()</span><br><span class="line">        newLeft = (screen.width() - size.width()) // <span class="number">2</span></span><br><span class="line">        newTop = (screen.height() - size.height()) // <span class="number">2</span></span><br><span class="line">        <span class="variable language_">self</span>.move(newLeft, newTop)</span><br><span class="line">    <span class="comment">#按钮单击事件的方法(自定义的槽)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">onClick_Button</span>(<span class="params">self</span>):</span><br><span class="line">        sender = <span class="variable language_">self</span>.sender()</span><br><span class="line">        <span class="built_in">print</span>(sender.text()+<span class="string">&#x27;按钮被按下&#x27;</span>)</span><br><span class="line">        app = QApplication.instance()</span><br><span class="line">        <span class="comment">#退出应用程序</span></span><br><span class="line">        app.quit()</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    firstWindow = FirstMainWin()</span><br><span class="line">    firstWindow.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-屏幕坐标系-面向过程"><a href="#6-屏幕坐标系-面向过程" class="headerlink" title="6.屏幕坐标系 面向过程"></a>6.屏幕坐标系 面向过程</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QApplication,QMainWindow,QWidget,QHBoxLayout,QPushButton</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">onClick_Button</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;widget.x()=%d&#x27;</span>%widget.x())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;widget.y()=%d&#x27;</span> % widget.y())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;widget.width()=%d&#x27;</span> % widget.width())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;widget.height()=%d&#x27;</span> % widget.height())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;2&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;widget.geometry().x()=%d&#x27;</span> % widget.geometry().x())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;widget.geometry().y()=%d&#x27;</span> % widget.geometry().y())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;widget.geometry().width()=%d&#x27;</span> % widget.geometry().width())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;widget.geometry().height()=%d&#x27;</span> % widget.geometry().height())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;3&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;widget.frameGeometry().x()=%d&#x27;</span> % widget.frameGeometry().x())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;widget.frameGeometry().y()=%d&#x27;</span> % widget.frameGeometry().y())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;widget.frameGeometry().width()=%d&#x27;</span> % widget.frameGeometry().width())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;widget.frameGeometry().height()=%d&#x27;</span> % widget.frameGeometry().height())</span><br><span class="line">app = QApplication(sys.argv)</span><br><span class="line">widget = QWidget()</span><br><span class="line">btn = QPushButton(widget)</span><br><span class="line">btn.setText(<span class="string">&#x27;按钮&#x27;</span>)</span><br><span class="line">btn.clicked.connect(onClick_Button)</span><br><span class="line">btn.move(<span class="number">24</span>,<span class="number">52</span>)</span><br><span class="line">widget.resize(<span class="number">300</span>,<span class="number">240</span>)</span><br><span class="line">widget.move(<span class="number">250</span>,<span class="number">200</span>)</span><br><span class="line">widget.setWindowTitle(<span class="string">&#x27;屏幕坐标系&#x27;</span>)</span><br><span class="line">widget.show()</span><br><span class="line">sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-绘图API——QPainteer"><a href="#7-绘图API——QPainteer" class="headerlink" title="7.绘图API——QPainteer"></a>7.绘图API——QPainteer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#可以绘制文本、各种图形(直线、点、椭圆、弧、扇形、多边形)、图像</span></span><br><span class="line"><span class="comment"># painter = QPainter()</span></span><br><span class="line"><span class="comment"># painter.begin()</span></span><br><span class="line"><span class="comment"># painter.drawText()</span></span><br><span class="line"><span class="comment"># painter.end()</span></span><br><span class="line"><span class="comment"># 必须在paintEvent事件中绘制各种元素</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QApplication,QMainWindow,QWidget</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> QPainter,QColor,QFont</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> Qt</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DrawText</span>(<span class="title class_ inherited__">QWidget</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(DrawText,<span class="variable language_">self</span>).__init__()</span><br><span class="line">        <span class="variable language_">self</span>.setWindowTitle(<span class="string">&#x27;在窗口上绘制文本&#x27;</span>)</span><br><span class="line">        <span class="variable language_">self</span>.resize(<span class="number">300</span>,<span class="number">200</span>)</span><br><span class="line">        <span class="variable language_">self</span>.text = <span class="string">&#x27;python从菜鸟到高手&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">paintEvent</span>(<span class="params">self,event</span>):</span><br><span class="line">        painter = QPainter(<span class="variable language_">self</span>)</span><br><span class="line">        painter.begin(<span class="variable language_">self</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;aaa&#x27;</span>)</span><br><span class="line">        painter.setPen(QColor(<span class="number">150</span>,<span class="number">43</span>,<span class="number">5</span>))</span><br><span class="line">        painter.setFont(QFont(<span class="string">&#x27;SimSun&#x27;</span>,<span class="number">25</span>))</span><br><span class="line">        painter.drawText(event.rect(),Qt.AlignCenter,<span class="variable language_">self</span>.text)</span><br><span class="line">        painter.end()</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app=QApplication(sys.argv)</span><br><span class="line">    main = DrawText()</span><br><span class="line">    main.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-绘制正弦曲线"><a href="#8-绘制正弦曲线" class="headerlink" title="8.绘制正弦曲线"></a>8.绘制正弦曲线</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#绘制正弦曲线</span></span><br><span class="line"><span class="keyword">import</span> sys,math</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DrawPoints</span>(<span class="title class_ inherited__">QWidget</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(DrawPoints,<span class="variable language_">self</span>).__init__()</span><br><span class="line">        <span class="variable language_">self</span>.resize(<span class="number">300</span>,<span class="number">300</span>)</span><br><span class="line">        <span class="variable language_">self</span>.setWindowTitle(<span class="string">&#x27;在窗口上用像素点绘制2个周期的正弦曲线&#x27;</span>)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">paintEvent</span>(<span class="params">self,event</span>):</span><br><span class="line">        painter = QPainter()</span><br><span class="line">        painter.begin(<span class="variable language_">self</span>)</span><br><span class="line">        painter.setPen(Qt.blue)</span><br><span class="line">        size = <span class="variable language_">self</span>.size()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">            x=<span class="number">100</span>*(-<span class="number">1</span>+<span class="number">2.0</span>*i/<span class="number">1000</span>)+size.width()/<span class="number">2.0</span></span><br><span class="line">            y=-<span class="number">50</span>*math.sin((x-size.width()/<span class="number">2.0</span>)*math.pi/<span class="number">50</span>)+size.height()/<span class="number">2.0</span></span><br><span class="line">            painter.drawPoint(x,y)</span><br><span class="line">        painter.end()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Drawline</span>(<span class="title class_ inherited__">QWidget</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(Drawline,<span class="variable language_">self</span>).__init__()</span><br><span class="line">        <span class="variable language_">self</span>.resize(<span class="number">300</span>,<span class="number">300</span>)</span><br><span class="line">        <span class="variable language_">self</span>.setWindowTitle(<span class="string">&#x27;在窗口上用像素点绘制直线&#x27;</span>)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">paintEvent</span>(<span class="params">self,event</span>):</span><br><span class="line">        painter = QPainter()</span><br><span class="line">        painter.begin(<span class="variable language_">self</span>)</span><br><span class="line"></span><br><span class="line">        pen = QPen(Qt.red,<span class="number">2</span>,Qt.SolidLine)</span><br><span class="line">        painter.setPen(pen)</span><br><span class="line">        painter.drawLine(<span class="number">20</span>,<span class="number">40</span>,<span class="number">250</span>,<span class="number">40</span>)</span><br><span class="line"></span><br><span class="line">        pen.setStyle(Qt.DashDotDotLine)</span><br><span class="line">        painter.setPen(pen)</span><br><span class="line">        painter.drawLine(<span class="number">20</span>, <span class="number">50</span>, <span class="number">250</span>, <span class="number">50</span>)</span><br><span class="line"></span><br><span class="line">        pen.setStyle(Qt.DashLine)</span><br><span class="line">        painter.setPen(pen)</span><br><span class="line">        painter.drawLine(<span class="number">20</span>, <span class="number">60</span>, <span class="number">250</span>, <span class="number">60</span>)</span><br><span class="line"></span><br><span class="line">        pen.setStyle(Qt.DashDotLine)</span><br><span class="line">        painter.setPen(pen)</span><br><span class="line">        painter.drawLine(<span class="number">20</span>, <span class="number">70</span>, <span class="number">250</span>, <span class="number">70</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">#自定义线段形式</span></span><br><span class="line">        pen.setStyle(Qt.CustomDashLine)</span><br><span class="line">        pen.setDashPattern([<span class="number">1</span>,<span class="number">10</span>,<span class="number">5</span>,<span class="number">8</span>])</span><br><span class="line">        painter.setPen(pen)</span><br><span class="line">        painter.drawLine(<span class="number">20</span>,<span class="number">80</span>,<span class="number">250</span>,<span class="number">80</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        painter.end()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DrawArc</span>(<span class="title class_ inherited__">QWidget</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(DrawArc,<span class="variable language_">self</span>).__init__()</span><br><span class="line">        <span class="variable language_">self</span>.resize(<span class="number">300</span>,<span class="number">300</span>)</span><br><span class="line">        <span class="variable language_">self</span>.setWindowTitle(<span class="string">&#x27;在窗口上用像素点绘制各种图形&#x27;</span>)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">paintEvent</span>(<span class="params">self,event</span>):</span><br><span class="line">        painter = QPainter()</span><br><span class="line">        painter.begin(<span class="variable language_">self</span>)</span><br><span class="line"></span><br><span class="line">        pen = QPen(Qt.red,<span class="number">2</span>,Qt.SolidLine)</span><br><span class="line">        painter.setPen(pen)</span><br><span class="line">        painter.drawLine(<span class="number">20</span>,<span class="number">40</span>,<span class="number">250</span>,<span class="number">40</span>)</span><br><span class="line">        <span class="comment">#绘制弧</span></span><br><span class="line">        rect = QRect(<span class="number">0</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>)</span><br><span class="line">        <span class="comment">#alen:一个alen等于1/16度</span></span><br><span class="line">        painter.drawArc(rect,<span class="number">0</span>,<span class="number">50</span>*<span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#通过弧绘制圆</span></span><br><span class="line">        painter.setPen(Qt.red)</span><br><span class="line">        painter.drawArc(<span class="number">120</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">0</span>,<span class="number">360</span>*<span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#绘制带弦的弧</span></span><br><span class="line">        painter.drawChord(<span class="number">10</span>,<span class="number">120</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">12</span>,<span class="number">130</span>*<span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#绘制扇形</span></span><br><span class="line">        painter.drawPie(<span class="number">10</span>,<span class="number">240</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">12</span>,<span class="number">130</span>*<span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#椭圆</span></span><br><span class="line">        painter.drawEllipse(<span class="number">120</span>,<span class="number">120</span>,<span class="number">150</span>,<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#绘制5边形</span></span><br><span class="line">        point1 = QPoint(<span class="number">140</span>,<span class="number">380</span>)</span><br><span class="line">        point2 = QPoint(<span class="number">270</span>, <span class="number">420</span>)</span><br><span class="line">        point3 = QPoint(<span class="number">290</span>, <span class="number">512</span>)</span><br><span class="line">        point4 = QPoint(<span class="number">290</span>, <span class="number">588</span>)</span><br><span class="line">        point5 = QPoint(<span class="number">200</span>, <span class="number">533</span>)</span><br><span class="line">        polygon = QPolygon([point1,point2,point3,point4,point5])</span><br><span class="line">        brush = QBrush(Qt.SolidPattern)</span><br><span class="line">        painter.setBrush(brush)</span><br><span class="line">        painter.drawPolygon(polygon)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#绘制图像</span></span><br><span class="line">        image = QImage(<span class="string">&#x27;./iu_01_1.png&#x27;</span>)</span><br><span class="line">        <span class="comment"># image.save(&#x27;iu_01_1.png&#x27;)</span></span><br><span class="line">        rect = QRect(<span class="number">10</span>,<span class="number">400</span>,image.width()/<span class="number">3</span>,image.height()/<span class="number">3</span>)</span><br><span class="line">        painter.drawImage(rect,image)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        painter.end()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    main = DrawArc()</span><br><span class="line">    main.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-让控件支持拖拽动作"><a href="#9-让控件支持拖拽动作" class="headerlink" title="9.让控件支持拖拽动作"></a>9.让控件支持拖拽动作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#让控件支持拖拽动作</span></span><br><span class="line"><span class="comment"># A.setDropEnabled(True)</span></span><br><span class="line"><span class="comment"># B.setAcceptDrops(True)</span></span><br><span class="line"><span class="comment"># B需要两个事件</span></span><br><span class="line"><span class="comment"># 1.draEnterEvent  将A拖到B触发</span></span><br><span class="line"><span class="comment"># 2.drapEvent  在B的区域放下A时触发</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyComBox</span>(<span class="title class_ inherited__">QComboBox</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(MyComBox,<span class="variable language_">self</span>).__init__()</span><br><span class="line">        <span class="variable language_">self</span>.setAcceptDrops(<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dragEnterEvent</span>(<span class="params">self,e</span>):</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">        <span class="keyword">if</span> e.mimeData().hasText():</span><br><span class="line">            e.accept()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            e.ignore()</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dropEvent</span>(<span class="params">self,e</span>):</span><br><span class="line">        <span class="variable language_">self</span>.addItem(e.mimeData().text())</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DrapDropDemo</span>(<span class="title class_ inherited__">QWidget</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(DrapDropDemo, <span class="variable language_">self</span>).__init__()</span><br><span class="line">        formLayout = QFormLayout()</span><br><span class="line">        formLayout.addRow(QLabel(<span class="string">&#x27;请将左边的文本拖拽到右边的下拉列表中&#x27;</span>))</span><br><span class="line">        lineEdit = QLineEdit()</span><br><span class="line">        lineEdit.setDragEnabled(<span class="literal">True</span>) <span class="comment">#让QLineEdit控件可拖动</span></span><br><span class="line"></span><br><span class="line">        combo = MyComBox()</span><br><span class="line">        formLayout.addRow(lineEdit,combo)</span><br><span class="line">        <span class="variable language_">self</span>.setLayout(formLayout)</span><br><span class="line">        <span class="variable language_">self</span>.setWindowTitle(<span class="string">&#x27;hahahaha&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    main = DrapDropDemo()</span><br><span class="line">    main.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-通过剪切板实现数据的传递共享"><a href="#10-通过剪切板实现数据的传递共享" class="headerlink" title="10.通过剪切板实现数据的传递共享"></a>10.通过剪切板实现数据的传递共享</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ClipBoard</span>(<span class="title class_ inherited__">QDialog</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(ClipBoard,<span class="variable language_">self</span>).__init__()</span><br><span class="line">        textCopyButton = QPushButton(<span class="string">&#x27;复制文本&#x27;</span>)</span><br><span class="line">        textPasteButton = QPushButton(<span class="string">&#x27;粘贴文本&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.textLabel = QLabel(<span class="string">&#x27;默认文本&#x27;</span>)</span><br><span class="line">        layout = QGridLayout()</span><br><span class="line">        layout.addWidget(textCopyButton,<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line">        layout.addWidget(textPasteButton,<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">        layout.addWidget(<span class="variable language_">self</span>.textLabel,<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.setLayout(layout)</span><br><span class="line">        textCopyButton.clicked.connect(<span class="variable language_">self</span>.copyText)</span><br><span class="line">        textPasteButton.clicked.connect(<span class="variable language_">self</span>.pasteText)</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.setWindowTitle(<span class="string">&#x27;你好&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">copyText</span>(<span class="params">self</span>):</span><br><span class="line">        ClipBoard = QApplication.clipboard()</span><br><span class="line">        ClipBoard.setText(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pasteText</span>(<span class="params">self</span>):</span><br><span class="line">        ClipBoard = QApplication.clipboard()</span><br><span class="line">        <span class="variable language_">self</span>.textLabel.setText(ClipBoard.text())</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    main = ClipBoard()</span><br><span class="line">    main.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<p>11.多个界面之间的切换</p>
+<p>12.切换界面之后再切换回来，循环引用问题</p>
+<p>13.渲染列表</p>
+<p>14.打开文件</p>
+<p>15.<a target="_blank" rel="noopener" href="https://geek-docs.com/pyqt/pyqt-questions/397_hk_1712100601.html">Pyqt5的QTableWidget对A1&#x2F;A2&#x2F;A3进行排序|极客教程 (geek-docs.com)</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/pyqt/" rel="tag"># pyqt</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/07/26/imagej%E5%AE%8F%E6%93%8D%E4%BD%9C/" rel="prev" title="imagej批量处理图像">
+      <i class="fa fa-chevron-left"></i> imagej批量处理图像
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/07/29/hexo%E6%90%AD%E5%BB%BA%E9%83%A8%E7%BD%B2/" rel="next" title="hexo搭建部署">
+      hexo搭建部署 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">zw</p>
+  <div class="site-description" itemprop="description">zw的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zw</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

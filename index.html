@@ -356,73 +356,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/05/crop%E8%BD%AE%E5%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zw">
-      <meta itemprop="description" content="zw的个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zw python">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/09/05/crop%E8%BD%AE%E5%BB%93/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2024-09-05 10:39:35" itemprop="dateCreated datePublished" datetime="2024-09-05T10:39:35+08:00">2024-09-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-11-08 10:29:43" itemprop="dateModified" datetime="2024-11-08T10:29:43+08:00">2024-11-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>title: crop轮廓<br>date: 2024-08-29 11:28:02<br>tags: 算法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#首先使用轮廓检测，当轮廓不明显时使用边缘检测算法加强轮廓</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">crop_contours</span>(<span class="params">file_path</span>):</span><br><span class="line">    file_paths = os.listdir(file_path)</span><br><span class="line">    <span class="keyword">for</span> file_name <span class="keyword">in</span> file_paths:</span><br><span class="line">        old_name = os.path.join(file_path,file_name)</span><br><span class="line">        img = cv2.imread(old_name)</span><br><span class="line">        w,h = img.shape[:<span class="number">2</span>]</span><br><span class="line">        im_area = w*h</span><br><span class="line">        img_gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">        ret, thresh = cv2.threshold(img_gray, <span class="number">15</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">        contours,hierarchy = cv2.findContours(image = thresh,mode=cv2.RETR_TREE,method = cv2.CHAIN_APPROX_NONE)</span><br><span class="line">        sorted_cnt = <span class="built_in">sorted</span>(contours, key=cv2.contourArea, reverse=<span class="literal">True</span>)</span><br><span class="line">        filtered_contours = []</span><br><span class="line">        <span class="comment"># 遍历排序后的轮廓</span></span><br><span class="line">        <span class="keyword">for</span> cnt <span class="keyword">in</span> sorted_cnt:</span><br><span class="line">            cnt_area = cv2.contourArea(cnt)</span><br><span class="line">            <span class="comment"># 如果轮廓面积大于图像面积的30%，则添加到过滤后的轮廓列表</span></span><br><span class="line">            <span class="keyword">if</span> cnt_area &gt; <span class="number">0.1</span> * im_area:</span><br><span class="line">                filtered_contours.append(cnt)</span><br><span class="line">        <span class="comment"># 将轮廓crop出来</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(filtered_contours) &gt; <span class="number">0</span>:</span><br><span class="line">            x, y, w, h = cv2.boundingRect(filtered_contours[<span class="number">0</span>])</span><br><span class="line">            new_name = os.path.join(<span class="string">r&#x27;D:\aaa\211&#x27;</span>,file_name)</span><br><span class="line">            cv2.imwrite(new_name, img[y:y + h, x:x + w])</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/04/python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E9%80%9A%E7%94%A8%E6%A8%A1%E6%9D%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -593,6 +526,72 @@
       
           <h3 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h3><p>一个文件夹中文件的命名规则为0、1、2、3、4……..98、99、100，想要对列表文件进行批量化操作时需要排序操作，但是直接排序会乱序，因此需要变成000、001、002、003、004…….098、099、100这种格式。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">pad_filename</span>(<span class="params">filename, width=<span class="number">3</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;将文件名填充到指定宽度，保留扩展名&quot;&quot;&quot;</span></span><br><span class="line">    name, ext = os.path.splitext(filename)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;<span class="subst">&#123;name.zfill(width)&#125;</span><span class="subst">&#123;ext&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rename_files_in_folder</span>(<span class="params">folder_path, width=<span class="number">3</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;重命名文件夹中的所有文件&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 获取文件夹中的所有文件</span></span><br><span class="line">    files = os.listdir(folder_path)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> files:</span><br><span class="line">        <span class="comment"># 获取文件的完整路径</span></span><br><span class="line">        old_path = os.path.join(folder_path, filename)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 生成新文件名</span></span><br><span class="line">        new_filename = pad_filename(filename, width)</span><br><span class="line">        new_path = os.path.join(folder_path, new_filename)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 重命名文件</span></span><br><span class="line">        os.rename(old_path, new_path)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;Renamed: <span class="subst">&#123;old_path&#125;</span> -&gt; <span class="subst">&#123;new_path&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例：指定要修改的文件夹路径和填充宽度</span></span><br><span class="line">folder_path = <span class="string">&#x27;D:/aaa/4-wt/new/new_figure&#x27;</span></span><br><span class="line">rename_files_in_folder(folder_path, width=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/08/29/crop%E8%BD%AE%E5%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zw">
+      <meta itemprop="description" content="zw的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zw python">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/08/29/crop%E8%BD%AE%E5%BB%93/" class="post-title-link" itemprop="url">crop轮廓</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-08-29 11:28:02" itemprop="dateCreated datePublished" datetime="2024-08-29T11:28:02+08:00">2024-08-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-11-08 10:41:30" itemprop="dateModified" datetime="2024-11-08T10:41:30+08:00">2024-11-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#首先使用轮廓检测，当轮廓不明显时使用边缘检测算法加强轮廓</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">crop_contours</span>(<span class="params">file_path</span>):</span><br><span class="line">    file_paths = os.listdir(file_path)</span><br><span class="line">    <span class="keyword">for</span> file_name <span class="keyword">in</span> file_paths:</span><br><span class="line">        old_name = os.path.join(file_path,file_name)</span><br><span class="line">        img = cv2.imread(old_name)</span><br><span class="line">        w,h = img.shape[:<span class="number">2</span>]</span><br><span class="line">        im_area = w*h</span><br><span class="line">        img_gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">        ret, thresh = cv2.threshold(img_gray, <span class="number">15</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">        contours,hierarchy = cv2.findContours(image = thresh,mode=cv2.RETR_TREE,method = cv2.CHAIN_APPROX_NONE)</span><br><span class="line">        sorted_cnt = <span class="built_in">sorted</span>(contours, key=cv2.contourArea, reverse=<span class="literal">True</span>)</span><br><span class="line">        filtered_contours = []</span><br><span class="line">        <span class="comment"># 遍历排序后的轮廓</span></span><br><span class="line">        <span class="keyword">for</span> cnt <span class="keyword">in</span> sorted_cnt:</span><br><span class="line">            cnt_area = cv2.contourArea(cnt)</span><br><span class="line">            <span class="comment"># 如果轮廓面积大于图像面积的30%，则添加到过滤后的轮廓列表</span></span><br><span class="line">            <span class="keyword">if</span> cnt_area &gt; <span class="number">0.1</span> * im_area:</span><br><span class="line">                filtered_contours.append(cnt)</span><br><span class="line">        <span class="comment"># 将轮廓crop出来</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(filtered_contours) &gt; <span class="number">0</span>:</span><br><span class="line">            x, y, w, h = cv2.boundingRect(filtered_contours[<span class="number">0</span>])</span><br><span class="line">            new_name = os.path.join(<span class="string">r&#x27;D:\aaa\211&#x27;</span>,file_name)</span><br><span class="line">            cv2.imwrite(new_name, img[y:y + h, x:x + w])</span><br></pre></td></tr></table></figure>
 
 
       
